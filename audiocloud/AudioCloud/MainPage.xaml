@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="AudioCloud.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AudioCloud"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cfo="using:CharmFlyoutLibrary"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <cfo:CharmFlyout
+           x:Name="cfoAbout"
+           Heading="About"
+           HeadingBackgroundBrush="#FF4E0000"
+           Grid.RowSpan="2">
+            <StackPanel x:Name="cfoAboutPanel">
+                <TextBlock x:Name="cfoLine1" TextWrapping="Wrap" FontSize="16">AudioCloud.</TextBlock>
+                <TextBlock x:Name="cfoBlank1" />
+                <TextBlock x:Name="cfoLine2" TextWrapping="Wrap" FontSize="16">Record and save your audio recordings into music library. A fantastic app who want to record some audio and listen to it later on.</TextBlock>
+
+            </StackPanel>
+        </cfo:CharmFlyout>
+        <Image x:Name="Record"  Source="/Assets/02.png" HorizontalAlignment="Stretch" PointerPressed="UIElement_OnPointerPressed"></Image>
+        <Image x:Name="imgRecording" Source="/Assets/01.png" Visibility="Collapsed" PointerPressed="ImgRecording_OnPointerPressed"></Image>
+        <ProgressRing x:Name="progress" IsActive="True" Height="142" Visibility="Collapsed" VerticalAlignment="Bottom" Margin="0,0,0,20" Width="146" ></ProgressRing>
+    </Grid>
+    <Page.BottomAppBar>
+        <AppBar IsOpen="True">
+            <Button Content="Show Files" Click="ButtonBase_OnClick"></Button>
+        </AppBar>
+    </Page.BottomAppBar>
+</Page>
